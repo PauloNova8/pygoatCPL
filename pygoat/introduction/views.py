@@ -82,7 +82,7 @@ def sql_lab(request):
             if login.objects.filter(user=name):
 
 
-                val=login.objects.raw("SELECT * FROM introduction_login WHERE user=%s AND password=%s", [name, password])
+                val=login.objects.raw("SELECT * FROM introduction_login WHERE user='"+name+"' AND password='"+password+"'")
 
                 if val:
                     user=val[0].user;
